@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cesar Arguello</title>
+  <link rel="Shortcut Icon" href="./icons/favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      /* Light grey background for better contrast */
+    }
+
+    header {
+      background-color: #4caf50;
+      /* Green color for header */
+      color: white;
+      padding: 2em 0;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #333;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      /* Center-align nav items */
+    }
+
+    nav ul li {
+      display: inline;
+      /* Display nav items inline */
+    }
+
+    nav ul li a {
+      display: inline-block;
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+
+    nav ul li a:hover {
+      background-color: #111;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 2em auto;
+      padding: 1em;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      /* Add shadow for better aesthetics */
+      text-align: center;
+    }
+
+    .about-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 1em 0;
+      border-bottom: 1px solid #ddd;
+      /* Add a bottom border */
+    }
+
+    ul.paper {
+      text-align: left;
+    }
+
+    .geneal-conatiner {
+      border-bottom: 1px solid #ddd;
+      /* Add a bottom border */
+      overflow: hidden;
+    }
+
+    .last-conatiner {
+      overflow: hidden;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+
+    .about-text {
+      max-width: 600px;
+      text-align: justify;
+    }
+
+    .education-list {
+      padding: 0;
+      list-style-type: none;
+      /* Remove default bullet points */
+    }
+
+    .education-list li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      /* Adjust to accommodate icon space */
+      position: relative;
+      /* Ensure positioning context for ::before pseudo-element */
+    }
+
+    .education-list li::before {
+      content: "";
+      background-image: url("./icons/graduation-cap-svgrepo-com.svg");
+      /* Specify path to your icon */
+      background-size: contain;
+      /* Adjust size as needed */
+      background-repeat: no-repeat;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      /* Adjust icon width */
+      height: 40px;
+      /* Adjust icon height */
+      margin-left: 310px;
+      /* Adjust spacing between icon and text */
+    }
+
+    .education-list_prog {
+      padding: 0;
+      list-style-type: none;
+      /* Remove default bullet points */
+    }
+
+    .education-list_prog li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      /* Adjust to accommodate icon space */
+      position: relative;
+      /* Ensure positioning context for ::before pseudo-element */
+    }
+
+    .education-list_prog li::before {
+      content: "";
+      background-image: url("./icons/loading-01-svgrepo-com.svg");
+      /* Specify path to your icon */
+      background-size: contain;
+      /* Adjust size as needed */
+      background-repeat: no-repeat;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      /* Adjust icon width */
+      height: 40px;
+      /* Adjust icon height */
+      margin-left: 310px;
+      /* Adjust spacing between icon and text */
+    }
+
+
+    h2 {
+      color: #4caf50;
+      /* Green color for headings */
+    }
+
+    #icon {
+      /* background-image: url("./icons/github-mark.svg"); */
+      width: 33.3%;
+      float: left;
+      height: auto;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Cesar Arguello</h1>
+    <p>PhD Student in Computer Science</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="content">
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-container">
+        <img src="./images/IMG_9295.jpg" alt="Your Picture" class="profile-pic" />
+        <div class="about-text">
+          <p>I am a PhD student at Dartmouth College working with <a href="https://www.cs.dartmouth.edu/~dfk/">Dr. David
+              Kotz</a> and
+            <a href="https://www.cs.dartmouth.edu/~tjp/">Dr. Tim Pierson</a>. My work focuses on the development of
+            Harmonic Radars (<a href="https://en.wikipedia.org/wiki/Nonlinear_junction_detector">Non-Linear Juction
+              Detectors</a>) for the detection of consumer electronics.
+            My research interests include different aspects of cybersecurity, such as side-channel analysis, wireless
+            network security, and exploitation of systems.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+
+      <h2 class="section-heading">Education</h2>
+      <div class="geneal-conatiner">
+        <ul class="education-list_prog">
+          <li>
+            <strong>Ph.D Computer Science</strong><a style="color: #4caf50" href="https://web.cs.dartmouth.edu/"><br />
+              Dartmouth College</a>
+          </li>
+        </ul>
+
+        <ul class="education-list">
+          <li>
+            <strong>B.S Computer Science</strong><a style="color: #fa4616" href="https://www.cise.ufl.edu/"><br />
+              University of Florida</a>, 2022
+          </li>
+        </ul>
+
+        <ul class="education-list">
+          <li>
+            <strong>B.S Physics</strong><a style="color: #0021a5" href="https://www.phys.ufl.edu/wp/"><br />
+              University of Florida</a>, 2022
+          </li>
+        </ul>
+
+        <ul class="education-list">
+          <li>
+            <strong>International Baccalaureate</strong><a style="color: #009b90" href="https://uwcrcn.no/"><br />
+              UWC Red Cross Nordic</a>, 2018
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <div class="geneal-conatiner">
+
+        <ul class="paper">
+          <a style="color: #009b90;">Cesar Arguello </a>, Beatrice Perez, Timothy J. Pierson, and David Kotz.
+          <strong>Detecting Battery Cells with Harmonic Radar</strong>. Proceedings of the ACM Conference on Security
+          and Privacy in Wireless and Mobile Networks (WiSec), pages 231–236. ACM, May 2024. <a
+            href="https://dl.acm.org/doi/10.1145/3643833.3656137">doi:10.1145/3643833.3656137</a>. [<a
+            href="./slides/Wisec24-HarmonicBattery-Slides.pdf">Slides]
+        </ul>
+
+        <ul class="paper">
+          Timothy J. Pierson, <a style="color: #009b90;">Cesar Arguello </a>, Beatrice Perez, Wondimu Zegeye, Kevin
+          Kornegay, Carl Gunter, and David Kotz.<strong> We need a “building inspector for IoT” </strong> when smart
+          homes are sold. IEEE Security & Privacy. IEEE, April 2024. <a
+            href="https://ieeexplore.ieee.org/document/10521679">doi:10.1109/MSEC.2024.3386467</a>.
+        </ul>
+
+        <ul class="paper">
+          Beatrice Perez, <a style="color: #009b90;">Cesar Arguello </a>, Timothy J. Pierson, Gregory Mazzaro, and David
+          Kotz.<strong> Evaluating the practical range of harmonic radar to detect smart electronics. Proceedings of the
+            IEEE Military Communications Conference (MILCOM)</strong>, pages 528–535. IEEE, October 2023.<a
+            href="https://ieeexplore.ieee.org/document/10356371">doi:10.1109/MILCOM58377.2023.10356371</a>.
+        </ul>
+
+        <ul class="paper">
+          <a style="color: #009b90;">Cesar Arguello </a>, Hunter Searle, Sara Rampazzi, Kevin Butler. <strong>[Poster]:
+            A practical methodology for ML-Based EM Side Channel Disassemblers</strong>. Proceedings of the 2022 Poster
+          Session of the 7th IEEE European Symposium on Security and Privacy, pages 7-9. IEE, June 2022. <a
+            href="https://zenodo.org/records/7068706">doi:10.5281/zenodo.7068706</a>.
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-heading">Contact</h2>
+      <div class="last-conatiner">
+        <div id="icon"><a href="https://github.com/carguelloM"><img src="./icons/github-mark.svg" width="20%"
+              height="20%"></a></div>
+        <div id="icon"><a href="mailto:cesar.n.arguello.martinez.gr@dartmouth.edu"><img
+              src="./icons/email-svgrepo-com.svg" width="20%" height="20%"></a></div>
+        <div id="icon"><a href="https://www.linkedin.com/in/c%C3%A9sar-arg%C3%BCello-31670419b/"><img
+              src="./icons/linkedin-svgrepo-com.svg" width="20%" height="20%"></a></div>
+      </div>
+    </section>
+
+  </div>
+</body>
+
+</html>
