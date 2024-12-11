@@ -88,7 +88,7 @@
       height: 300px;
       border-radius: 50%;
       object-fit: cover;
-      /* margin-right: 40px; */
+      margin-right: 40px;
     }
 
     .header-name{
@@ -361,6 +361,34 @@
       text-decoration: none;
     }
 
+    /* news css */
+    .news-list{
+      list-style: none;
+      padding: 0;
+      padding:0;
+      text-align: left;
+    }
+
+    .news-list li {
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    .news-item {
+      display: flex;
+      justify-content:space-evenly;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width:100%;
+    }
+
+    .news-info {
+      flex-grow: 1;
+      margin-left: 36px;
+      margin-right: 60px;
+      max-width: 58%;
+    }
+
     /* Responsive css*/
     @media (max-width: 768px) {
       nav{
@@ -381,6 +409,7 @@
         height: 160px;
         margin-bottom: 24px;
         align-items: center;
+        margin-right: 0;
       }
 
       .about-text{
@@ -449,6 +478,9 @@
       .content-container {
         align-items: center;
       }
+      #news{
+        display:none;
+      }
     }
 
     @media (max-width: 480px) {
@@ -471,6 +503,7 @@
         margin-bottom: 20px;
         align-items: center;
         justify-content: center;
+        margin-right: 0;
       }
 
       .about-text{
@@ -650,6 +683,9 @@
     .contact-icon a {
       text-decoration: none;
     }
+    #news{
+      display: none;
+    }
     }
   </style>
 </head>
@@ -759,7 +795,7 @@
             <br><strong>Detecting Battery Cells with Harmonic Radar</strong>. Proceedings of the ACM Conference on Security
             and Privacy in Wireless and Mobile Networks (WiSec), pages 231–236. ACM, May 2024. 
             <br>
-             <img src="./images/placeholder.png" alt="placeholder" class="paper-img">
+            <img src="./images/placeholder.png" alt="placeholder" class="paper-img">
             <br>
             <a href="https://dl.acm.org/doi/10.1145/3643833.3656137" class="paper-button custom-link-paperbtn">Paper</a>
             <a href="./slides/Wisec24-HarmonicBattery-Slides.pdf" class="paper-button custom-link-paperbtn">Slides</a>
@@ -801,6 +837,47 @@
             <a href="https://zenodo.org/records/7068706" class="paper-button custom-link-paperbtn ">Poster</a>
           </ul>
       </div>
+      </div>
+    </section>
+    <!-- news section -->
+    <section id="news">
+      <div class="row">
+        <h2 class="section-heading">SELECTED NEWS</h2>
+        <div class="content-container">
+          <ul class="news-list">
+            <li class="news-item">
+              <div class="year-icon">
+                <span class="year">2024</span>
+              </div>
+              <div class="news-info">
+                <ul class="bullet-points">
+                  <li>[In application]  Harmonic radar for battery detection. U.S. Provisional Patent Application, United States Patent and Trademark Office.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="news-item">
+              <div class="year-icon">
+                <span class="year">2024</span>
+              </div>
+              <div class="news-info">
+                <ul class="bullet-points">
+                  <li>Detecting Battery Cells with Harmonic Radar. Proceedings of the ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec), pages 231–236. ACM, May 2024.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="news-item">
+              <div class="year-icon">
+                <span class="year">2024</span>
+              </div>
+              <div class="news-info">
+                <ul class="bullet-points">
+                  <li>Detecting Battery Cells with Harmonic Radar. Proceedings of the ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec), pages 231–236. ACM, May 2024.</li>
+                </ul>
+              </div>
+            </li>
+            
+          </ul>
+        </div>
       </div>
     </section>
     <!-- contact section -->
