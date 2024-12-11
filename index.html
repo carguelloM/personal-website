@@ -20,33 +20,26 @@
       background-color: #e1e9e5;
     }
 
-    header {
-      background-color: #00693E;
-      color: white;
-      padding: 2em 0;
-      text-align: center;
-      margin-top: 60px;
-    }
-
+    /* navbar css */
     nav {
       background-color: rgb(255, 255, 255);
-      position: fixed; /* Set the navbar to fixed position */
-      top: 0; /* Position the navbar at the top of the page */
-      width: 100%; /* Full width */
+      position: fixed;
+      top: 0;
+      width: 100%;
       overflow: hidden;
-      display: flex; /* Use Flexbox for alignment */
+      display: flex;
       z-index: 10;
       height:60px;
       align-items: center;
       justify-content: center;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 
     }
 
     nav ul {
       display: flex;
       gap: 40px;
-      list-style: none; /* Remove bullet points */
+      list-style: none;
       margin: 0;
       padding: 0;
     }
@@ -54,7 +47,6 @@
     nav ul li {
       display: inline;
       padding: 5px 10px;
-      /* Display nav items inline */
     }
 
     nav ul li a {
@@ -68,24 +60,188 @@
       color:#00693E
     }
 
+    /* header css */
+    header {
+      background-color: #00693E;
+      color: white;
+      padding-top:2.6rem;
+      padding-bottom:3.3rem;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .about-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 1em 0;
+    }
+
+    .about-text {
+      max-width: 520px;
+      text-align: justify;
+    }
+
+    .profile-pic {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 40px;
+    }
+
+    .header-name{
+      font-size:2rem;
+      line-height: 0.6rem;
+    }
+    
+    .header-subtitle{
+      font-size:1.1rem;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .header-body{
+      font-size:0.95rem;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
     .resume-button {
       background-color: #12312b;
       border: none;
       color: #ffffff;
-      padding: 16px 24px;
+      padding: 12px 20px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
       font-size: 16px;
-      margin: 16px 2px;
+      margin: 16px 4px;
       cursor: pointer;
       border-radius: 6px;
-      box-shadow: 0px 4px 6px rgba(3, 32, 7, 0.17); /* Subtle shadow */
+      box-shadow: 0px 4px 6px rgba(3, 32, 7, 0.14);
     }
 
     .resume-button:hover {
       background-color: #8dbb4d;
     }
+
+    .custom-link {
+      color: #ffffff;
+      font-weight: bold;
+    }
+    .custom-link:hover {
+      color: #a5d75f;
+    }
+
+    /* section css */
+    .content {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(11, 67, 19, 0.1);
+      margin: 0 auto;
+      padding: 20px;
+      max-width: 1000px;
+      margin-top:60px;
+    }
+
+    .row {
+      display: flex;
+      align-items: flex-start; 
+      margin-bottom: 40px;
+    }
+
+    .section-heading {
+      font-size: 1.5rem;
+      color: #00693E; 
+      margin-bottom: 15px;
+      margin-left:24px;
+      text-align: left; 
+      margin-right: 200px;
+    }
+
+    .content-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* education css */
+    .education-list{
+      list-style: none;
+      padding: 0;
+      padding:0;
+      text-align: left;
+    }
+
+    .education-list li {
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .education-item {
+      display: flex;
+      justify-content: space-evenly;
+      border-bottom: 0.6px solid rgb(230, 230, 230);
+      padding-top: 36px;
+      padding-bottom: 36px;
+      width:100%;
+    }
+
+    .school-icon-dartmouth {
+      flex-shrink: 0; 
+      width: 60px;
+      height: auto;
+    }
+
+
+    .school-icon-uf {
+      flex-shrink: 0; 
+      width: 70px; 
+      height: auto;
+    }
+
+    .school-icon-uwc{
+      flex-shrink: 0;
+      width: 64px; 
+      height: auto;
+    }
+
+    .degree-info {
+      flex-grow: 1;
+      margin-left: 36px;
+      margin-right: 60px;
+      max-width: 58%;
+    }
+
+    .degree {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 0.2;
+      margin-bottom: 2px;
+    }
+
+    .school {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #555;
+      line-height: 0.2;
+      margin-bottom: 2px; 
+    }
+
+    .custom-link-whitebg {
+      color: #1f1f1f; 
+      font-weight: bold; 
+    }
+    .custom-link-whitebg:hover {
+      color: #00693E; 
+    }
+
+
+
+
+
+
 
     .paper-button {
       background-color: #ffffff;
@@ -107,31 +263,8 @@
       color:#ffffff;
     }
 
-    .content {
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(11, 67, 19, 0.1);
-      margin: 0 auto;
-      padding: 20px;
-      max-width: 1000px;
-      margin-top:60px;
-    }
 
-    .row {
-      display: flex;
-      align-items: flex-start; /* Align titles and content vertically */
-      margin-bottom: 40px; /* Add spacing between sections */
-    }
 
-    .about-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto;
-      padding: 1em 0;
-      /* border-bottom: 1px solid #ddd; */
-      /* Add a bottom border */
-    }
 
     ul.paper {
       text-align: left;
@@ -147,27 +280,7 @@
       overflow: hidden;
     }
 
-    .profile-pic {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 20px;
-      margin-right: 32px;
-    }
 
-    .about-text {
-      max-width: 520px;
-      text-align: justify;
-    }
-
-    .education-list {
-      padding: 0;
-      list-style-type: none;
-      text-align: center;
-
-      /* Remove default bullet points */
-    }
     .res_cv{
     display: flex;
     flex-direction: row;
@@ -175,44 +288,13 @@
     align-items: center;
     gap: 10px;
     }
-    .education-list li {
-      margin-bottom: 10px;
-      /* padding-left: 20px; */
-      /* Adjust to accommodate icon space */
-      position: relative;
-      /* Ensure positioning context for ::before pseudo-element */
-    }
 
-    .section-heading {
-      font-size: 1.5rem;
-      color: #00693E; /* Dark gray for titles */
-      margin-bottom: 15px;
-      margin-left:24px;
-      text-align: left; /* Ensure left alignment for section titles */
-      margin-right: 200px;
-    }
+
+
 
     h2 {
       color: #4caf50;
       /* Green color for headings */
-    }
-
-    .custom-link {
-      color: #ffffff; /* Custom color */
-      font-weight: bold; /* Bold text */
-    }
-    .custom-link:hover {
-      color: #a5d75f; /* Darker color on hover */
-      /* text-decoration: underline dotted; Dotted underline */
-    }
-
-    .custom-link-whitebg {
-      color: #1f1f1f; /* Custom color */
-      font-weight: bold; /* Bold text */
-    }
-    .custom-link-whitebg:hover {
-      color: #00693E; /* Darker color on hover */
-      /* text-decoration: underline dotted; Dotted underline */
     }
 
     .custom-link-paperbtn {
@@ -242,55 +324,24 @@
       gap: 15px; /* Spacing between list items or content */
     }
 
-    .content-container {
-      /* flex: 1; Take up remaining space (80%) */
-      display: flex;
-      flex-direction: column;
-      /* gap: 20px; */
-      /* margin-left:4rem; */
-    }
 
-    /* Education list styling */
-    .education-list{
-      list-style: none;
-      padding: 0;
-      padding:0;
-      text-align: left;
-      /* margin-left:72px;  */
-    }
 
-  /* Degree and School Styling */
-  .degree-info {
-    max-width: 58%; /* Prevents overlap */
-  }
 
-  .degree {
-    font-size: 1.2rem; /* Larger font size */
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
 
-  .school {
+  /* .school {
     font-size: 1rem;
     font-weight: 600;
-  }
+  } */
 
   .location {
     font-size: 0.9rem;
     color:rgb(124, 124, 124);
-    line-height: 1.2; /* Narrower leading */
+    line-height: 1.2;
   }
 
   .year {
     font-size: 0.9rem;
-    /* font-weight: 600;  */
     text-align: right;
-  }
-
-  .school-icon {
-    width: 60px;
-    height: 60px;
-    /* border-radius: 50%; */
   }
 
 
@@ -323,50 +374,19 @@
       transform: scale(1.1); /* Slight zoom effect on hover */
     }
 
-    .education-list {
-    list-style-type: none;
-    padding: 0;
-  }
 
-.education-item {
-  display: flex;
-  justify-content: space-evenly; /* 항목들을 양쪽 끝에 정렬 */
-  /* align-items: center;  */
-  border-bottom: 0.6px solid rgb(230, 230, 230); /* 각 항목 사이에 구분선 추가 */
-  padding: 10px 0;
-  width:100%;
-}
 
-.school-icon {
-  flex-shrink: 0; /* 이미지 크기 축소 방지 */
-  width: 50px; /* 아이콘 이미지 크기 고정 */
-  height: 50px;
-}
 
-.degree-info {
-  flex-grow: 1;
-  margin-left: 40px;
-  margin-right: 90px;
-}
+
+
 
 .year-icon {
   text-align: right; /* 날짜 부분 오른쪽 정렬 */
 }
 
-.degree {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 0.2; /* 학위 이름의 행간 좁히기 */
-  margin-bottom: 2px; /* 학위 이름과 학교 이름 사이 간격 좁히기 */
-}
 
-.school {
-  font-size: 14px;
-  color: #555;
-  line-height: 0.2; /* 학위 이름의 행간 좁히기 */
-  margin-bottom: 2px; /* 학위 이름과 학교 이름 사이 간격 좁히기 */
-  
-}
+
+
 
 .year {
   font-size: 12px;
@@ -392,12 +412,48 @@
   line-height: 1.2; /* 행간을 약간 좁혀줍니다 */
 }
 
+#contact {
+  padding-top:60px;
+  padding-bottom: 36px;
+  text-align: center;
+}
+
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* gap between icons */
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-icon .icon {
+  width: 36px;
+  height: 36px;
+  transition: transform 0.3s ease, filter 0.3s ease; 
+}
+
+.contact-icon .icon:hover {
+  transform: scale(1.4); 
+  filter: brightness(1.4);
+}
+
+.contact-icon a {
+  text-decoration: none;
+}
+
+
     
   </style>
 </head>
 
 <body>
   <section id="about"/>
+<!-- navbar -->
   <nav>
     <ul>
       <li><a href="#about">About Me</a></li>
@@ -406,17 +462,17 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
+<!-- about me section -->
   <header>
     <div class="about-container">
-      <img src="./images/IMG_9295.jpg" alt="Your Picture" class="profile-pic" />
+      <img src="./images/IMG_9295.jpg" alt="profile-pic" class="profile-pic" />
       <div class="about-text">
-        <h1>Cesar Arguello</h1>
-        <h4>PhD Student in Computer Science</h4>
-        <p>I am a PhD student at Dartmouth College working with <a href="https://www.cs.dartmouth.edu/~dfk/" class="custom-link">Dr. David
-            Kotz</a> and
-          <a href="https://www.cs.dartmouth.edu/~tjp/" class="custom-link">Dr. Tim Pierson</a>. My work focuses on the development of
-          Harmonic Radars (<a href="https://en.wikipedia.org/wiki/Nonlinear_junction_detector" class="custom-link">Non-Linear Juction
-          Detectors</a>) for the detection of consumer electronics.
+        <h1 class="header-name">Cesar Arguello</h1>
+        <h4 class="header-subtitle">Ph.D Student in Computer Science</h4>
+        <p class="header-body">I am a PhD student at Dartmouth College working with <a href="https://www.cs.dartmouth.edu/~dfk/" class="custom-link">Dr. David
+            Kotz</a> and <a href="https://www.cs.dartmouth.edu/~tjp/" class="custom-link">Dr. Tim Pierson</a>. 
+            My work focuses on the development of Harmonic Radars (<a href="https://en.wikipedia.org/wiki/Nonlinear_junction_detector" class="custom-link">Non-Linear Juction
+            Detectors</a>) for the detection of consumer electronics.
           <br><br>
           My research interests include different aspects of cybersecurity, such as side-channel analysis, wireless
           network security, and exploitation of systems.
@@ -426,15 +482,17 @@
       </div>
     </div>
   </header>
+
   <div class="content">
+    <!-- education section -->
     <section id="education">
       <div class="row">
-        <h2 class="section-heading">Education</h2>
+        <h2 class="section-heading">EDUCATION</h2>
         <div class="content-container">
           <ul class="education-list">
             <li class="education-item">
-              <div class="school-icon">
-                <img src="./images/dartmouth.png" alt="Dartmouth logo" class="school-icon">
+              <div>
+                <img src="./images/dartmouth-college.svg" alt="Dartmouth logo" class="school-icon-dartmouth">
               </div>  
               <div class="degree-info">
                 <strong class="degree">Ph.D in Computer Science</strong>
@@ -447,13 +505,12 @@
               </div>
               <div class="year-icon">
                 <p class="year">2022 - Present</p>
-                
               </div>
             </li>
       
             <li class="education-item">
-              <div class="school-icon">
-                <img src="./images/dartmouth.png" alt="Dartmouth logo" class="school-icon">
+              <div>
+                <img src="./images/uf.svg" alt="UF logo" class="school-icon-uf">
               </div>  
               <div class="degree-info">
                 <strong class="degree">B.S in Computer Science and Physics</strong>
@@ -469,30 +526,32 @@
                 <span class="year">2018 - 2022</span>
               </div>
             </li>
-      
+
+            <!--  -->
             <li class="education-item">
-              <div class="school-icon">
-                <img src="./images/dartmouth.png" alt="Dartmouth logo" class="school-icon">
+              <div>
+                <img src="./images/uwc.png" alt="UWC logo" class="school-icon-uwc">
               </div>  
               <div class="degree-info">
                 <strong class="degree">International Baccalaureate</strong>
-                <p class="school">UWC Red Cross Nordic</p>
-                <p class="location">Norway</p>
+                <p class="school"><a href="https://uwcrcn.no/" class="custom-link-whitebg">UWC Red Cross Nordic</a></p>
+                <p class="location">Flekke, Norway</p>
                 <ul class="bullet-points">
                   <li>Academic Scholarship, Davis UWC Scholars</li>
                 </ul>
               </div>
               <div class="year-icon">
-                <span class="year">2018</span>
+                <span class="year">2017 - 2018</span>
               </div>
             </li>
           </ul>
         </div>
       </div>
     </section>
+    <!-- publication section -->
     <section id="publications">
       <div class="row">
-        <h2 class="section-heading">Publications</h2>
+        <h2 class="section-heading">PUBLICATIONS</h2>
         <div class="content-conatiner">
 
           <ul class="paper">
@@ -507,7 +566,7 @@
           <ul class="paper">
             Timothy J. Pierson, <a style="font-weight: 700; color:#1f1f1f; text-decoration: underline;">Cesar Arguello </a>, Beatrice Perez, Wondimu Zegeye, Kevin
             Kornegay, Carl Gunter, and David Kotz.
-            <br>
+            <br class="paper-gap">
             <strong> We need a “building inspector for IoT” </strong> when smart
             homes are sold. IEEE Security & Privacy. IEEE, April 2024. 
             <br>
@@ -538,16 +597,26 @@
     </section>
 
     <section id="contact">
-      <h2 class="section-heading">Contact</h2>
-      <div class="last-conatiner">
-        <div id="icon"><a href="https://github.com/carguelloM"><img src="./icons/github-mark.svg" width="10%"
-              height="10%"></a></div>
-        <div id="icon"><a href="mailto:cesar.n.arguello.martinez.gr@dartmouth.edu"><img
-              src="./icons/email-svgrepo-com.svg" width="10%" height="10%"></a></div>
-        <div id="icon"><a href="https://www.linkedin.com/in/c%C3%A9sar-arg%C3%BCello-31670419b/"><img
-              src="./icons/linkedin-svgrepo-com.svg" width="10%" height="10%"></a></div>
+      <!-- <h2 class="section-heading">Contact</h2> -->
+      <div class="contact-container">
+        <div class="contact-icon">
+          <a href="https://github.com/carguelloM" target="_blank" rel="noopener noreferrer">
+            <img src="./icons/icon-github.png" alt="GitHub" class="icon" />
+          </a>
+        </div>
+        <div class="contact-icon">
+          <a href="mailto:cesar.n.arguello.martinez.gr@dartmouth.edu">
+            <img src="./icons/icon-email.png" alt="Email" class="icon" />
+          </a>
+        </div>
+        <div class="contact-icon">
+          <a href="https://www.linkedin.com/in/c%C3%A9sar-arg%C3%BCello-31670419b/" target="_blank" rel="noopener noreferrer">
+            <img src="./icons/icon-linkedin.png" alt="LinkedIn" class="icon" />
+          </a>
+        </div>
       </div>
     </section>
+    
 
   </div>
 </body>
