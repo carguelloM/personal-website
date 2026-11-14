@@ -5,904 +5,507 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cesar Arguello</title>
-  <link rel="Shortcut Icon" href="./icons/favicon.ico" type="image/x-icon" />
+  <meta name="description" content="Cesar Arguello, Ph.D. student in Computer Science at Dartmouth College working on wireless and IoT security." />
+  <link rel="icon" href="./icons/favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-    html {
-      scroll-behavior: smooth;
+    :root {
+      --bg: #ffffff;
+      --text: #1f2328;
+      --muted: #59636e;
+      --rule: #e4e7eb;
+      --card: #f7f8f9;
+      --accent: #00693e;        /* Dartmouth green */
+      --accent-soft: #e6f2ec;
+      --thumb-bg: #ffffff;
     }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111413;
+        --text: #e6e8e7;
+        --muted: #9aa3a0;
+        --rule: #2a302d;
+        --card: #181c1a;
+        --accent: #4fbf8a;
+        --accent-soft: #1d2e26;
+        --thumb-bg: #f4f5f5;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      padding: 0;
-      background-color: #e1e9e5;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* navbar css */
-    nav {
-      background-color: rgb(255, 255, 255);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      overflow: hidden;
-      display: flex;
-      z-index: 10;
-      height:60px;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 20px 48px;
+    }
+
+    /* top nav */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--rule);
     }
 
     nav ul {
-      display: flex;
-      gap: 40px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li {
-      display: inline;
-      padding: 5px 10px;
-    }
-
-    nav ul li a {
-      display: inline-block;
-      color: rgb(29, 29, 29);
-      padding: 14px 20px;
-      text-decoration: none;
-    }
-
-    nav ul li a:hover {
-      color:#00693E
-    }
-
-    /* header css */
-    header {
-      background-color: #00693E;
-      color: white;
-      padding-top:2.6rem;
-      padding-bottom:3.3rem;
-      text-align: center;
-      margin-top: 60px;
-    }
-
-    .about-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      max-width: 780px;
       margin: 0 auto;
-      padding: 1em 0;
+      padding: 0 20px;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 24px;
+      height: auto;
+      min-height: 52px;
+      align-items: center;
     }
 
-    .about-text {
-      max-width: 520px;
-      text-align: justify;
+    nav a { color: var(--muted); font-size: 0.92rem; font-weight: 500; }
+    nav a:hover { color: var(--accent); text-decoration: none; }
+    nav .brand { color: var(--text); font-weight: 600; margin-right: auto; }
+
+    /* header */
+    header {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+      padding: 56px 0 40px;
     }
 
     .profile-pic {
-      width: 300px;
-      height: 300px;
+      width: 168px;
+      height: 168px;
       border-radius: 50%;
       object-fit: cover;
-      margin-right: 40px;
-    }
-
-    .header-name{
-      font-size:2rem;
-      line-height: 0.6rem;
-    }
-    
-    .header-subtitle{
-      font-size:1.1rem;
-      font-weight: 400;
-      line-height: 1.6;
-    }
-
-    .header-body{
-      font-size:0.95rem;
-      font-weight: 400;
-      line-height: 1.4;
-    }
-
-    .resume-button {
-      background-color: #12312b;
-      border: none;
-      color: #ffffff;
-      padding: 12px 20px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 16px 4px;
-      cursor: pointer;
-      border-radius: 6px;
-      box-shadow: 0px 4px 6px rgba(3, 32, 7, 0.14);
-    }
-
-    .resume-button:hover {
-      background-color: #8dbb4d;
-    }
-
-    .custom-link {
-      color: #ffffff;
-      font-weight: bold;
-    }
-    .custom-link:hover {
-      color: #a5d75f;
-    }
-
-    /* section css */
-    .content {
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(11, 67, 19, 0.1);
-      margin: 0 auto;
-      padding: 20px;
-      max-width: 1000px;
-      margin-top:60px;
-      margin-bottom: 60px;
-    }
-
-    .row {
-      display: flex;
-      align-items: flex-start; 
-      margin-bottom: 40px;
-    }
-
-    .section-heading {
-      font-size: 1.5rem;
-      color: #00693E; 
-      margin-bottom: 15px;
-      margin-left:24px;
-      text-align: left; 
-      margin-right: 200px;
-    }
-
-    .content-container {
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* education css */
-    .education-list{
-      list-style: none;
-      padding: 0;
-      padding:0;
-      text-align: left;
-    }
-
-    .education-list li {
-      margin-bottom: 10px;
-      position: relative;
-    }
-
-    .education-item {
-      display: flex;
-      justify-content: space-evenly;
-      border-bottom: 0.6px solid rgb(230, 230, 230);
-      padding-top: 10px;
-      padding-bottom: 36px;
-      width:100%;
-    }
-
-    .school-icon-dartmouth {
-      flex-shrink: 0; 
-      width: 60px;
-      height: auto;
-    }
-
-
-    .school-icon-uf {
-      flex-shrink: 0; 
-      width: 70px; 
-      height: auto;
-    }
-
-    .school-icon-uwc{
       flex-shrink: 0;
-      width: 64px; 
-      height: auto;
     }
 
-    .degree-info {
-      flex-grow: 1;
-      margin-left: 36px;
-      margin-right: 60px;
-      max-width: 58%;
-    }
-
-    .degree {
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 0.2;
-      margin-bottom: 2px;
-    }
-
-    .school {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #555;
-      line-height: 0.2;
-      margin-bottom: 2px; 
-    }
-
-    .location {
-      font-size: 0.8rem;
-      color: #777;
-      margin-bottom: 10px;
-      color:rgb(124, 124, 124);
-      line-height: 1.5;
-    }
-
-    .bullet-points {
-      list-style-type: disc;
-      margin-left: 16px; 
-      padding-left: 10px;
-      font-size: 0.85rem;
-      color: rgb(62, 62, 62);
-    }
-
-    .bullet-points li {
-      margin-bottom: 4px;
-      line-height: 1.3;
-    }
-
-    .year-icon {
-      text-align: right; 
-    }
-
-    .year {
-      font-size: 0.8rem;
-      color: #777;
-    }
-
-    .custom-link-whitebg {
-      color: #1f1f1f; 
-      font-weight: bold; 
-    }
-    .custom-link-whitebg:hover {
-      color: #00693E; 
-    }
-
-    /* publications css */
-    .paper-author{
-      font-weight: 700; 
-      color:#1f1f1f; 
-      text-decoration: underline;
-    }
-
-    .paper {
-      list-style: none;
-      padding: 0;
-      text-align: left;
+    header h1 {
       margin: 0;
-      background: #fff;
-      border: 0.7px solid rgb(237, 237, 237);
-      border-radius: 8px;
-      padding: 16px 16px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-      font-size: 0.95rem;
-    }
-
-    ul.paper {
-      margin-bottom: 24px;
-    }
-
-    .paper-img{
-      flex-shrink: 0;
-      width: 100%; 
-      height: auto;
-    }
-
-    .paper-button {
-      background-color: #ffffff;
-      border: 1px solid;
-      border-color: #00693E;
-      padding: 8px 10px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 1rem;
-      margin: 16px 2px;
-      cursor: pointer;
-      border-radius: 6px;
-    }
-
-    .paper-button:hover {
-      background-color: #00693E;
-      color:#ffffff;
-    }
-
-    .custom-link-paperbtn {
-      color: #00693E;
-      font-size: 14px;
-
-    }
-    .custom-link-paperbtn:hover {
-      color: #ffffff;
-    }
-
-    /* contact css */
-    #contact {
-      padding-top:60px;
-      padding-bottom: 36px;
-      text-align: center;
-    }
-
-
-    .contact-container {
-      display: flex;
-      justify-content: center;
-      gap: 60px; 
-    }
-
-    .contact-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .contact-icon .icon {
-      width: 36px;
-      height: 36px;
-      transition: transform 0.3s ease, filter 0.3s ease; 
-    }
-
-    .contact-icon .icon:hover {
-      transform: scale(1.4); 
-      filter: brightness(1.4);
-    }
-
-    .contact-icon a {
-      text-decoration: none;
-    }
-
-    /* news css */
-    .news-list{
-      list-style: none;
-      padding: 0;
-      padding:0;
-      text-align: left;
-    }
-
-    .news-list li {
-        margin-bottom: 10px;
-        position: relative;
-    }
-
-    .news-item {
-      display: flex;
-      justify-content:space-evenly;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      width:100%;
-    }
-
-    .news-info {
-      flex-grow: 1;
-      margin-left: 36px;
-      margin-right: 60px;
-      max-width: 58%;
-    }
-
-    /* Responsive css*/
-    @media (max-width: 768px) {
-      nav{
-        visibility: hidden;
-      }
-
-      header{
-        margin-top:0
-      }
-
-      .about-container {
-        flex-direction: column;
-        padding: 0.5rem;
-      }
-
-      .profile-pic {
-        width: 160px;
-        height: 160px;
-        margin-bottom: 24px;
-        align-items: center;
-        margin-right: 0;
-      }
-
-      .about-text{
-        text-align: center;
-      }
-
-      .header-name{
-      font-size:1.8rem;
-      line-height: 0.4rem;
-    }
-    
-    .header-subtitle{
-      font-size:0.9rem;
-      font-weight: 400;
-      line-height: 1.6;
-    }
-
-    .header-body{
-      font-size:0.8rem;
-      font-weight: 400;
-      line-height: 1.4;
-    }
-
-    .resume-button {
-      width: 40%;
-      margin: 16px 0;
-    }
-
-        /* section css */
-    .content {
-      background-color: white;
-      box-shadow: 0 0 10px rgba(43, 86, 50, 0.095);
-      margin: 0 auto;
-      padding: 20px;
-      max-width: 1000px;
-      margin-top:60px;
-      margin-bottom: 60px;
-    }
-
-    .row {
-      flex-direction: column;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    .degree-info {
-      max-width: 80%;
-      margin-left: 0;
-      margin-right: 0;
-      align-items: center;
-      justify-content: center;
-    }
-
-      .school-icon-dartmouth,
-      .school-icon-uf,
-      .school-icon-uwc {
-        width: 50px;
-        margin-bottom: 16px;
-        margin-right: 20px;
-      }
-
-      .content-container {
-        align-items: center;
-      }
-      #news{
-        display:none;
-      }
-    }
-
-    @media (max-width: 480px) {
-      nav{
-        visibility: hidden;
-      }
-
-      header{
-        margin-top:0
-      }
-
-      .about-container {
-        flex-direction: column;
-        padding: 0.5rem;
-      }
-
-      .profile-pic {
-        width: 160px;
-        height: 160px;
-        margin-bottom: 20px;
-        align-items: center;
-        justify-content: center;
-        margin-right: 0;
-      }
-
-      .about-text{
-        text-align: center;
-      }
-
-      .header-name{
-      font-size:1.4rem;
-      line-height: 0.4rem;
-    }
-    
-    .header-subtitle{
-      font-size:0.8rem;
-      font-weight: 600;
-      line-height: 1.6;
-    }
-
-    .header-body{
-      font-size:0.7rem;
-      font-weight: 400;
-      line-height: 1.4;
-    }
-
-    .resume-button {
-      width: 30%;
-      margin: 16px 0;
-    }
-
-        /* section css */
-    .content {
-      background-color: white;
-      box-shadow: 0 0 10px rgba(43, 86, 50, 0.095);
-      margin: 0 auto;
-      padding: 20px;
-      max-width: 1000px;
-      margin-top:60px;
-      margin-bottom: 60px;
-    }
-
-    .row {
-      flex-direction: column;
-    }
-
-    .section-heading {
-      font-size: 1.2rem;
-      font-weight: 800;
-      text-align: center;
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    /*  */
-    .degree-info {
-      flex-grow: 1;
-      margin-left: 36px;
-      margin-right: 60px;
-      max-width: 58%;
-    }
-
-    .degree {
+      font-size: 2rem;
       font-weight: 700;
-      font-size: 14px;
-      line-height: 0.2;
-      margin-bottom: 2px;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
     }
 
-    .school {
-      font-size: 12px;
-      font-weight: 600;
-      color: #555;
-      line-height: 0.2;
-      margin-bottom: 2px; 
+    .subtitle {
+      margin: 4px 0 14px;
+      color: var(--muted);
+      font-weight: 500;
     }
 
-    .location {
-      font-size: 0.7rem;
-      color: #777;
-      margin-bottom: 10px;
-      color:rgb(124, 124, 124);
-      line-height: 1.5;
-    }
+    .bio { margin: 0 0 16px; }
 
-    .bullet-points {
-      list-style-type: disc;
-      margin-left: 16px; 
-      padding-left: 10px;
-      font-size: 0.85rem;
-      color: rgb(62, 62, 62);
-    }
-
-    .bullet-points li {
-      margin-bottom: 4px;
-      line-height: 1.3;
-    }
-
-    .year-icon {
-      text-align: right; 
-    }
-
-    .year {
-      visibility: hidden;
-    }
-
-    .degree-info {
-      max-width: 80%;
-      margin-left: 0;
-      margin-right: 0;
-      align-items: center;
-      justify-content: center;
-    }
-
-      .school-icon-dartmouth,
-      .school-icon-uf,
-      .school-icon-uwc {
-        width: 40px;
-        margin-bottom: 16px;
-        margin-right: 20px;
-      }
-
-      .content-container {
-        align-items: center;
-      }
-
-      .paper-author{
-      font-weight: 600; 
-      color:#1f1f1f; 
-      text-decoration: underline;
-    }
-
-    .paper {
-      list-style: none;
-      padding: 0;
-      text-align: left;
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
       margin: 0;
-      background: #fff;
-      border: 0.7px solid rgb(237, 237, 237);
-      border-radius: 8px;
-      padding: 16px 16px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-      font-size: 0.8rem;
+      padding: 0;
+      list-style: none;
     }
 
-    ul.paper {
-      margin-bottom: 20px;
+    .links a {
+      display: inline-block;
+      padding: 5px 12px;
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      color: var(--text);
+      font-size: 0.88rem;
+      font-weight: 500;
     }
 
-    #contact {
-      /* padding-top:36px; */
-      padding-bottom: 24px;
-      text-align: center;
-    }
-
-
-    .contact-container {
-      display: flex;
-      justify-content: center;
-      gap: 48px; 
-    }
-
-    .contact-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .contact-icon .icon {
-      width: 24px;
-      height: 24px;
-      transition: transform 0.3s ease, filter 0.3s ease; 
-    }
-
-    .contact-icon .icon:hover {
-      transform: scale(1.4); 
-      filter: brightness(1.4);
-    }
-
-    .contact-icon a {
+    .links a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
       text-decoration: none;
     }
-    #news{
-      display: none;
+
+    .links a.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
     }
+
+    .links a.primary:hover { filter: brightness(1.1); color: #fff; }
+
+    /* sections */
+    section { padding-top: 28px; scroll-margin-top: 52px; }
+
+    h2 {
+      margin: 0 0 18px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    h3 {
+      margin: 26px 0 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    /* dated list: news */
+    .dated {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .dated li {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 16px;
+      padding: 6px 0;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-variant-numeric: tabular-nums;
+      padding-top: 1px;
+    }
+
+    .where { color: var(--muted); }
+
+    /* publications */
+    .pub {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 22px;
+      padding: 18px 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .pub:first-child { border-top: none; }
+    .pub.noimg { grid-template-columns: 1fr; }
+
+    .thumb {
+      width: 200px;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background: var(--thumb-bg);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 6px;
+    }
+
+    .pub-title {
+      display: block;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .authors { font-size: 0.92rem; }
+    .authors .me { font-weight: 600; }
+
+    .venue {
+      font-size: 0.92rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-right: 6px;
+      padding: 1px 8px;
+      border-radius: 4px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 600;
+      font-style: normal;
+      letter-spacing: 0.02em;
+      vertical-align: 1px;
+    }
+
+    .note { font-size: 0.88rem; color: var(--muted); margin-top: 2px; }
+
+    .buttons { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .buttons a {
+      padding: 2px 10px;
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .buttons a:hover {
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* folded publications ("Show all"); only hidden once the script runs */
+    .js .folded:not(.open) { display: none; }
+    .js #pub-list:not(.open) .pub:not(.selected) { display: none; }
+
+    .show-all {
+      margin-top: 8px;
+      padding: 6px 14px;
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--accent);
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .show-all:hover { border-color: var(--accent); }
+
+    /* education */
+    .edu {
+      display: grid;
+      grid-template-columns: 44px 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 8px 0;
+    }
+
+    .edu img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      background: var(--thumb-bg);   /* keeps colored logos readable in dark mode */
+      border-radius: 8px;
+      padding: 4px;
+    }
+    .edu .degree { font-weight: 600; }
+    .edu .school { color: var(--muted); font-size: 0.92rem; }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    /* phones */
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 36px 0 24px;
+      }
+
+      .profile-pic { width: 132px; height: 132px; }
+      .links { justify-content: center; }
+      nav .brand { display: none; }
+      nav ul { justify-content: center; }
+
+      .pub { grid-template-columns: 1fr; gap: 12px; }
+      .thumb { width: 100%; max-width: 360px; }
+
+      .dated li { grid-template-columns: 1fr; gap: 0; }
+      .edu { grid-template-columns: 36px 1fr; }
+      .edu img { width: 36px; height: 36px; }
+      .edu .date { grid-column: 2; }
     }
   </style>
 </head>
 
 <body>
-  <section id="about"/>
-<!-- navbar -->
   <nav>
     <ul>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#education">Education</a></li>
+      <li><a class="brand" href="#">Cesar Arguello</a></li>
+      <li><a href="#news">News</a></li>
       <li><a href="#publications">Publications</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#education">Education</a></li>
     </ul>
   </nav>
-<!-- about me section -->
-  <header>
-    <div class="about-container">
-      <img src="./images/IMG_9295.jpg" alt="profile-pic" class="profile-pic" />
-      <div class="about-text">
-        <h1 class="header-name">Cesar Arguello</h1>
-        <h4 class="header-subtitle">Ph.D Student in Computer Science</h4>
-        <p class="header-body">I am a PhD student at Dartmouth College working with <a href="https://www.cs.dartmouth.edu/~dfk/" class="custom-link">Dr. David
-            Kotz</a> and <a href="https://www.cs.dartmouth.edu/~tjp/" class="custom-link">Dr. Tim Pierson</a>. 
-            My work focuses on the development of Harmonic Radars (<a href="https://en.wikipedia.org/wiki/Nonlinear_junction_detector" class="custom-link">Non-Linear Juction
-            Detectors</a>) for the detection of consumer electronics.
-          <br><br>
-          My research interests include different aspects of cybersecurity, such as side-channel analysis, wireless
-          network security, and exploitation of systems.
+
+  <div class="page">
+    <!-- about -->
+    <header>
+      <img src="./images/profile.jpg" alt="Photo of Cesar Arguello" class="profile-pic" />
+      <div>
+        <h1>Cesar Arguello</h1>
+        <p class="subtitle">Ph.D. Student in Computer Science, Dartmouth College</p>
+        <p class="bio">
+          I work with <a href="https://www.cs.dartmouth.edu/~dfk/">David Kotz</a> and
+          <a href="https://www.cs.dartmouth.edu/~tjp/">Tim Pierson</a> on wireless and IoT security.
+          My work focuses on harmonic radar (<a href="https://en.wikipedia.org/wiki/Nonlinear_junction_detector">non-linear
+          junction detectors</a>) for detecting consumer electronics. My broader interests include side-channel
+          analysis, wireless network security, and systems exploitation.
         </p>
-        <a href="./other/resume.pdf" class="resume-button">Resumé</a>
-        <a href="./other/cv.pdf" class="resume-button">CV</a>
+        <ul class="links">
+          <li><a class="primary" href="./other/cv.pdf">CV</a></li>
+          <li><a href="mailto:cesar.n.arguello.martinez.gr@dartmouth.edu">Email</a></li>
+          <li><a href="https://github.com/carguelloM">GitHub</a></li>
+        </ul>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <div class="content">
-    <!-- education section -->
-    <section id="education">
-      <div class="row">
-        <h2 class="section-heading">EDUCATION</h2>
-        <div class="content-container">
-          <ul class="education-list">
-            <li class="education-item">
-              <div>
-                <img src="./images/dartmouth-college.svg" alt="Dartmouth logo" class="school-icon-dartmouth">
-              </div>  
-              <div class="degree-info">
-                <strong class="degree">Ph.D in Computer Science</strong>
-                <p class="school"><a href="https://home.dartmouth.edu/" class="custom-link-whitebg">Dartmouth College</a></p>
-                <p class="location">Hanover, New Hampshire</p>
-                <ul class="bullet-points">
-                  <li> A member of research team at <a href="https://splice-project.org/" class="custom-link-whitebg">SPLICE Research</a></li>
-                  <li>[In application]  Harmonic radar for battery detection. U.S. <br>Provisional Patent Application, United States Patent and Trademark Office.</li>
-                </ul>
-              </div>
-              <div class="year-icon">
-                <p class="year">2022 - Present</p>
-              </div>
-            </li>
-      
-            <li class="education-item">
-              <div>
-                <img src="./images/uf.svg" alt="UF logo" class="school-icon-uf">
-              </div>  
-              <div class="degree-info">
-                <strong class="degree">B.S in Computer Science and Physics</strong>
-                <p class="school"><a href="https://www.ufl.edu/" class="custom-link-whitebg">University of Florida</a></p>
-                <p class="location">Gainesville, Florida</p>
-                <ul class="bullet-points">
-                  <li>Graduted Cum Laude</li>
-                  <li>Selected for Honors Program</li>
-                  <li>Member of the <a href="https://fics.institute.ufl.edu/" class="custom-link-whitebg">Florida Institute of Cybersecurity</a></li>
-                </ul>
-              </div>
-              <div class="year-icon">
-                <span class="year">2018 - 2022</span>
-              </div>
-            </li>
-            <li class="education-item">
-              <div>
-                <img src="./images/uwc.png" alt="UWC logo" class="school-icon-uwc">
-              </div>  
-              <div class="degree-info">
-                <strong class="degree">International Baccalaureate</strong>
-                <p class="school"><a href="https://uwcrcn.no/" class="custom-link-whitebg">UWC Red Cross Nordic</a></p>
-                <p class="location">Flekke, Norway</p>
-                <ul class="bullet-points">
-                  <li>IB Extended Essay:</li>
-                </ul>
-              </div>
-              <div class="year-icon">
-                <span class="year">2016 - 2018</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- publication section -->
-    <section id="publications">
-      <div class="row">
-        <h2 class="section-heading">PUBLICATIONS</h2>
-        <div class="content-conatiner">
-          <ul class="paper">
-            <a class="paper-author">Cesar Arguello</a>, Beatrice Perez, Timothy J. Pierson, and David Kotz
-            <br><strong>Detecting Battery Cells with Harmonic Radar</strong>. Proceedings of the ACM Conference on Security
-            and Privacy in Wireless and Mobile Networks (WiSec), pages 231–236. ACM, May 2024. 
-            <br>
-            <img src="./images/battery_detection.png" alt="placeholder" class="paper-img">
-            <br>
-            <a href="https://dl.acm.org/doi/10.1145/3643833.3656137" class="paper-button custom-link-paperbtn">Paper</a>
-            <a href="./slides/Wisec24-HarmonicBattery-Slides.pdf" class="paper-button custom-link-paperbtn">Slides</a>
-          </ul>
-
-          <ul class="paper">
-            Timothy J. Pierson, <a class="paper-author">Cesar Arguello</a>, Beatrice Perez, Wondimu Zegeye, Kevin
-            Kornegay, Carl Gunter, and David Kotz
-            <br class="paper-gap">
-            <strong> We need a “building inspector for IoT” </strong> when smart
-            homes are sold. IEEE Security & Privacy. IEEE, April 2024. 
-            <br>
-            <img src="./images/inspectorProcess.png" alt="placeholder" class="paper-img">
-            <br>
-            <a href="https://ieeexplore.ieee.org/document/10521679" class="paper-button custom-link-paperbtn">Paper</a>
-          </ul>
-
-          <ul class="paper">
-            Beatrice Perez, <a class="paper-author">Cesar Arguello</a>, Timothy J. Pierson, Gregory Mazzaro, and David
-            Kotz
-            <br>
-            <strong> Evaluating the practical range of harmonic radar to detect smart electronics. Proceedings of the
-              IEEE Military Communications Conference (MILCOM)</strong>, pages 528–535. IEEE, October 2023.
-              <br>
-              <img src="./images/harmonic_distance.png" alt="placeholder" class="paper-img">
-            <br>
-            <a href="https://ieeexplore.ieee.org/document/10356371" class="paper-button custom-link-paperbtn ">Paper</a>
-          </ul>
-
-          <ul class="paper">
-            <a class="paper-author">Cesar Arguello</a>, Hunter Searle, Sara Rampazzi, Kevin Butler
-            <br>
-            <strong>[Poster]:
-              A practical methodology for ML-Based EM Side Channel Disassemblers</strong>. Proceedings of the 2022 Poster
-            Session of the 7th IEEE European Symposium on Security and Privacy, pages 7-9. IEE, June 2022. 
-            <br>
-            <img src="./images/disas.png" alt="placeholder" class="paper-img">
-            <br>
-            <a href="https://zenodo.org/records/7068706" class="paper-button custom-link-paperbtn ">Poster</a>
-          </ul>
-      </div>
-      </div>
-    </section>
-    <!-- news section -->
+    <!-- news -->
     <section id="news">
-      <div class="row">
-        <h2 class="section-heading">SELECTED NEWS</h2>
-        <div class="content-container">
-          <ul class="news-list">
-              <li class="news-item">
-              <div class="year-icon">
-                <span class="year">Nov. 2024</span>
-              </div>
-              <div class="news-info">
-                <ul class="bullet-points">
-                  <li>Passed my <a href="https://drive.google.com/file/d/1kPqWsD9vujZn12PFoBXPp5tAaPEU_k6M/view" class="custom-link-whitebg">RPE</a>. Paper Presented: <a href="https://dl.acm.org/doi/10.1145/3241539.3241580" class="custom-link-whitebg">Ghostbuster: Detecting the Presence of Hidden Eavesdroppers</a>. <a href="./other/rpe-slides.pdf" class="custom-link-whitebg">[Slides]</a> </li>
-                </ul>
-              </div>
-            </li>
+      <h2>News</h2>
+      <ul class="dated">
+        <li><span class="date">2026</span><span><a href="#publications">NICPrint</a> accepted at NDSS 2027, with all three Artifact Evaluation badges (Available, Functional, Reproduced).</span></li>
+        <li><span class="date">2026</span><span>Serving on the NDSS 2027 Artifact Evaluation Committee.</span></li>
+        <li><span class="date">Apr 2026</span><span>Invited talk at Imperial College London: “New Functionalities for the Wi-Fi Preamble?”</span></li>
+      </ul>
+      <ul class="dated folded" id="more-news">
+        <li><span class="date">Nov 2024</span><span>Passed my <a href="https://drive.google.com/file/d/1kPqWsD9vujZn12PFoBXPp5tAaPEU_k6M/view">RPE</a>, presenting <a href="https://dl.acm.org/doi/10.1145/3241539.3241580">Ghostbuster: Detecting the Presence of Hidden Eavesdroppers</a> (<a href="./other/rpe-slides.pdf">slides</a>).</span></li>
+        <li><span class="date">Jun 2024</span><span>Participated as a student in the <a href="https://www.cybertruckchallenge.org/">2024 CyberTruck Challenge</a>.</span></li>
+        <li><span class="date">May 2024</span><span>Presented <a href="https://dl.acm.org/doi/10.1145/3643833.3656137">Detecting Battery Cells with Harmonic Radar</a> at ACM WiSec 2024 in Seoul, South Korea, with an NSF Student Travel Grant.</span></li>
+      </ul>
+      <button class="show-all" type="button" data-target="more-news" data-label="Show all news" hidden></button>
+    </section>
 
-            <li class="news-item">
-              <div class="year-icon">
-                <span class="year">June 2024</span>
-              </div>
-              <div class="news-info">
-                <ul class="bullet-points">
-                  <li>Participated as student of the <a href="https://www.cybertruckchallenge.org/" class="custom-link-whitebg"> 2024 CyberTruck Challenge</a></li>
-                </ul>
-              </div>
-            </li>
+    <!-- publications -->
+    <section id="publications">
+      <h2>Publications</h2>
 
-            <li class="news-item">
-              <div class="year-icon">
-                <span class="year">May 2024</span>
-              </div>
-              <div class="news-info">
-                <ul class="bullet-points">
-                  <li>Presented <a href="https://dl.acm.org/doi/10.1145/3643833.3656137" class="custom-link-whitebg">Detecting Battery Cells with Harmonic Radar</a> at the 17th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec) in Seoul, South Korea.</li>
-                </ul>
-              </div>
-            </li>
-            
-          </ul>
+      <!-- newest first; class "selected" = shown before "Show all" -->
+      <div id="pub-list">
+      <div class="pub selected">
+         <img src="./images/nicoprint_nrar.png" alt="Diagram of the non-linear junction in a battery cell" class="thumb" />
+        <div>
+          <span class="pub-title">NICPrint: Wi-Fi NIC Identification via Malformed Preambles</span>
+          <div class="authors"><span class="me">Cesar Arguello</span>, Beatrice Perez, Timothy J. Pierson, and David Kotz</div>
+          <div class="venue"><span class="tag">NDSS 2027</span>Network and Distributed System Security Symposium</div>
+          <div class="note">To appear. Artifact badges: Available, Functional, Reproduced.</div>
+          <div class="buttons">
+            <a href="https://doi.org/10.5281/zenodo.23508520">Artifact</a>
+          </div>
         </div>
       </div>
-    </section>
-    <!-- contact section -->
-    <section id="contact">
-      <div class="contact-container">
-        <div class="contact-icon">
-          <a href="https://github.com/carguelloM" target="_blank" rel="noopener noreferrer">
-            <img src="./icons/icon-github.png" alt="GitHub" class="icon" />
-          </a>
-        </div>
-        <div class="contact-icon">
-          <a href="mailto:cesar.n.arguello.martinez.gr@dartmouth.edu">
-            <img src="./icons/icon-email.png" alt="Email" class="icon" />
-          </a>
-        </div>
-        <div class="contact-icon">
-          <a href="https://www.linkedin.com/in/c%C3%A9sar-arg%C3%BCello-31670419b/" target="_blank" rel="noopener noreferrer">
-            <img src="./icons/icon-linkedin.png" alt="LinkedIn" class="icon" />
-          </a>
+      <div class="pub noimg">
+        <div>
+          <a class="pub-title" href="https://doi.org/10.1145/3641554.3701956">Engaging Students from Under-represented Groups to Pursue Graduate School in Computer Science and Engineering</a>
+          <div class="authors">Ravindra Mangar, <span class="me">Cesar Arguello</span>, David Inyangson, Tina Pavlovich, Karen Gareis, and Tushar Jois</div>
+          <div class="venue"><span class="tag">SIGCSE 2025</span>ACM Technical Symposium on Computer Science Education</div>
+          <div class="buttons">
+            <a href="https://doi.org/10.1145/3641554.3701956">Paper</a>
+          </div>
         </div>
       </div>
+      <div class="pub selected">
+        <img src="./images/battery_detection.png" alt="Diagram of the non-linear junction in a battery cell" class="thumb" />
+        <div>
+          <a class="pub-title" href="https://doi.org/10.1145/3643833.3656137">Detecting Battery Cells with Harmonic Radar</a>
+          <div class="authors"><span class="me">Cesar Arguello</span>, Beatrice Perez, Timothy J. Pierson, and David Kotz</div>
+          <div class="venue"><span class="tag">WiSec 2024</span>ACM Conference on Security and Privacy in Wireless and Mobile Networks</div>
+          <div class="buttons">
+            <a href="https://doi.org/10.1145/3643833.3656137">Paper</a>
+            <a href="./slides/Wisec24-HarmonicBattery-Slides.pdf">Slides</a>
+            <a href="https://patents.google.com/patent/US20250362406A1/en">Patent</a>
+          </div>
+        </div>
+      </div>
+      <div class="pub">
+        <img src="./images/inspectorProcess.png" alt="Inventory, wipe, and transfer steps for IoT devices when a home is sold" class="thumb" />
+        <div>
+          <a class="pub-title" href="https://doi.org/10.1109/MSEC.2024.3386467">We Need a “Building Inspector for IoT” When Smart Homes Are Sold</a>
+          <div class="authors">Timothy J. Pierson, <span class="me">Cesar Arguello</span>, Beatrice Perez, Wondimu Zegeye, Kevin Kornegay, Carl A. Gunter, and David Kotz</div>
+          <div class="venue"><span class="tag">IEEE S&amp;P Magazine 2024</span>IEEE Security &amp; Privacy</div>
+          <div class="buttons">
+            <a href="https://doi.org/10.1109/MSEC.2024.3386467">Paper</a>
+          </div>
+        </div>
+      </div>
+      <div class="pub selected">
+        <img src="./images/harmonic_distance.png" alt="Detection rate versus distance for several smart devices" class="thumb" />
+        <div>
+          <a class="pub-title" href="https://doi.org/10.1109/MILCOM58377.2023.10356371">Evaluating the Practical Range of Harmonic Radar to Detect Smart Electronics</a>
+          <div class="authors">Beatrice Perez, <span class="me">Cesar Arguello</span>, Timothy J. Pierson, Gregory Mazzaro, and David Kotz</div>
+          <div class="venue"><span class="tag">MILCOM 2023</span>IEEE Military Communications Conference</div>
+          <div class="buttons">
+            <a href="https://doi.org/10.1109/MILCOM58377.2023.10356371">Paper</a>
+          </div>
+        </div>
+      </div>
+      <div class="pub">
+        <img src="./images/disas.png" alt="EM trace spectrogram captured from a microcontroller" class="thumb" />
+        <div>
+          <a class="pub-title" href="https://arxiv.org/abs/2206.10746">A Practical Methodology for ML-based EM Side-Channel Disassemblers</a>
+          <div class="authors"><span class="me">Cesar Arguello</span>, Hunter Searle, Sara Rampazzi, and Kevin Butler</div>
+          <div class="venue"><span class="tag">Poster · EuroS&amp;P 2022</span>IEEE European Symposium on Security and Privacy</div>
+          <div class="buttons">
+            <a href="https://arxiv.org/abs/2206.10746">Paper</a>
+            <a href="https://zenodo.org/records/7068706">Poster</a>
+          </div>
+        </div>
+      </div>
+      </div>
+      <button class="show-all" type="button" data-target="pub-list" data-label="Show all publications" hidden></button>
     </section>
-    
+
+
+    <!-- education -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="edu">
+        <img src="./images/dartmouth-college.svg" alt="Dartmouth College logo" />
+        <div><div class="degree">Ph.D. in Computer Science</div><div class="school">Dartmouth College</div></div>
+        <span class="date">2022 – Present</span>
+      </div>
+      <div class="edu">
+        <img src="./images/uf.svg" alt="University of Florida logo" />
+        <div><div class="degree">B.S. in Physics &amp; Computer Science, <em>cum laude</em></div><div class="school">University of Florida</div></div>
+        <span class="date">2018 – 2022</span>
+      </div>
+      <div class="edu">
+        <img src="./images/uwc.png" alt="UWC Red Cross Nordic logo" />
+        <div><div class="degree">International Baccalaureate Diploma</div><div class="school">UWC Red Cross Nordic, Norway</div></div>
+        <span class="date">2016 – 2018</span>
+      </div>
+    </section>
+
+    <script>
+      // Each "Show all" button unfolds the .folded block named in data-target.
+      // Without JavaScript nothing is folded and the buttons stay hidden.
+      document.documentElement.classList.add("js");
+      for (const button of document.querySelectorAll(".show-all")) {
+        const block = document.getElementById(button.dataset.target);
+        const section = button.closest("section");
+        const total = section.querySelectorAll(".pub, .dated li").length;
+        const closed = `${button.dataset.label} (${total})`;
+        button.textContent = closed;
+        button.hidden = false;
+        button.addEventListener("click", () => {
+          const open = block.classList.toggle("open");
+          button.textContent = open ? "Show fewer" : closed;
+        });
+      }
+    </script>
+
+    <footer>
+      © 2026 Cesar Arguello · Last updated November 2026
+    </footer>
   </div>
 </body>
 </html>
