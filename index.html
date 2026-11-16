@@ -4,35 +4,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#111413" />
   <title>Cesar Arguello</title>
-  <meta name="description" content="Cesar Arguello, Ph.D. student in Computer Science at Dartmouth College working on wireless and IoT security." />
+  <meta name="description" content="Cesar Arguello, Ph.D. student in Computer Science at Dartmouth College working on security and privacy in smart homes." />
   <link rel="icon" href="./icons/favicon.ico" type="image/x-icon" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #ffffff;
-      --text: #1f2328;
-      --muted: #59636e;
-      --rule: #e4e7eb;
-      --card: #f7f8f9;
-      --accent: #00693e;        /* Dartmouth green */
-      --accent-soft: #e6f2ec;
-      --thumb-bg: #ffffff;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #111413;
-        --text: #e6e8e7;
-        --muted: #9aa3a0;
-        --rule: #2a302d;
-        --card: #181c1a;
-        --accent: #4fbf8a;
-        --accent-soft: #1d2e26;
-        --thumb-bg: #f4f5f5;
-      }
+      color-scheme: dark;
+      --bg: #111413;
+      --text: #e6e8e7;
+      --muted: #9aa3a0;
+      --rule: #2a302d;
+      --card: #181c1a;
+      --accent: #4fbf8a;        /* Dartmouth green, lightened for dark backgrounds */
+      --accent-soft: #1d2e26;
+      --on-accent: #111413;     /* text on accent-filled buttons */
+      --thumb-bg: #f4f5f5;      /* keeps colored logos readable */
     }
 
     * { box-sizing: border-box; }
@@ -145,10 +136,10 @@
     .links a.primary {
       background: var(--accent);
       border-color: var(--accent);
-      color: #fff;
+      color: var(--on-accent);
     }
 
-    .links a.primary:hover { filter: brightness(1.1); color: #fff; }
+    .links a.primary:hover { filter: brightness(1.1); color: var(--on-accent); }
 
     /* sections */
     section { padding-top: 28px; scroll-margin-top: 52px; }
@@ -196,25 +187,11 @@
 
     /* publications */
     .pub {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 22px;
       padding: 18px 0;
       border-top: 1px solid var(--rule);
     }
 
     .pub:first-child { border-top: none; }
-    .pub.noimg { grid-template-columns: 1fr; }
-
-    .thumb {
-      width: 200px;
-      aspect-ratio: 16 / 9;
-      object-fit: contain;
-      background: var(--thumb-bg);
-      border: 1px solid var(--rule);
-      border-radius: 8px;
-      padding: 6px;
-    }
 
     .pub-title {
       display: block;
@@ -261,7 +238,7 @@
 
     .buttons a:hover {
       background: var(--accent);
-      color: #fff;
+      color: var(--on-accent);
       text-decoration: none;
     }
 
@@ -322,12 +299,10 @@
       }
 
       .profile-pic { width: 132px; height: 132px; }
+      .bio { text-align: left; }
       .links { justify-content: center; }
       nav .brand { display: none; }
       nav ul { justify-content: center; }
-
-      .pub { grid-template-columns: 1fr; gap: 12px; }
-      .thumb { width: 100%; max-width: 360px; }
 
       .dated li { grid-template-columns: 1fr; gap: 0; }
       .edu { grid-template-columns: 36px 1fr; }
@@ -350,16 +325,17 @@
   <div class="page">
     <!-- about -->
     <header>
-      <img src="./images/profile.jpg" alt="Photo of Cesar Arguello" class="profile-pic" />
+      <img src="./images/profile.jpg" alt="Photo of Cesar Arguello" class="profile-pic" width="168" height="168" />
       <div>
         <h1>Cesar Arguello</h1>
         <p class="subtitle">Ph.D. Student in Computer Science, Dartmouth College</p>
         <p class="bio">
           I work with <a href="https://www.cs.dartmouth.edu/~dfk/">David Kotz</a> and
-          <a href="https://www.cs.dartmouth.edu/~tjp/">Tim Pierson</a> on wireless and IoT security.
-          My work focuses on harmonic radar (<a href="https://en.wikipedia.org/wiki/Nonlinear_junction_detector">non-linear
-          junction detectors</a>) for detecting consumer electronics. My broader interests include side-channel
-          analysis, wireless network security, and systems exploitation.
+          <a href="https://www.cs.dartmouth.edu/~tjp/">Tim Pierson</a> on security and privacy in smart homes,
+          focusing on the physical layer (PHY) of their wireless networks. I study what everyday wireless signals
+          reveal about the devices that send them and how commodity PHYs can be repurposed to better protect the
+          people who use them. I previously worked on harmonic radar for detecting consumer electronics. My broader
+          interests lie at the intersection of security and signal analysis.
         </p>
         <ul class="links">
           <li><a class="primary" href="./other/cv.pdf">CV</a></li>
@@ -373,8 +349,8 @@
     <section id="news">
       <h2>News</h2>
       <ul class="dated">
-        <li><span class="date">2026</span><span><a href="#publications">NICPrint</a> accepted at NDSS 2027, with all three Artifact Evaluation badges (Available, Functional, Reproduced).</span></li>
-        <li><span class="date">2026</span><span>Serving on the NDSS 2027 Artifact Evaluation Committee.</span></li>
+        <li><span class="date">Sep 2026</span><span><a href="#publications">NICPrint</a> accepted at NDSS 2027.</span></li>
+        <li><span class="date">Jun 2026</span><span>Serving on the NDSS 2027 Artifact Evaluation Committee.</span></li>
         <li><span class="date">Apr 2026</span><span>Invited talk at Imperial College London: “New Functionalities for the Wi-Fi Preamble?”</span></li>
       </ul>
       <ul class="dated folded" id="more-news">
@@ -392,7 +368,6 @@
       <!-- newest first; class "selected" = shown before "Show all" -->
       <div id="pub-list">
       <div class="pub selected">
-         <img src="./images/nicoprint_nrar.png" alt="Diagram of the non-linear junction in a battery cell" class="thumb" />
         <div>
           <span class="pub-title">NICPrint: Wi-Fi NIC Identification via Malformed Preambles</span>
           <div class="authors"><span class="me">Cesar Arguello</span>, Beatrice Perez, Timothy J. Pierson, and David Kotz</div>
@@ -403,7 +378,7 @@
           </div>
         </div>
       </div>
-      <div class="pub noimg">
+      <div class="pub">
         <div>
           <a class="pub-title" href="https://doi.org/10.1145/3641554.3701956">Engaging Students from Under-represented Groups to Pursue Graduate School in Computer Science and Engineering</a>
           <div class="authors">Ravindra Mangar, <span class="me">Cesar Arguello</span>, David Inyangson, Tina Pavlovich, Karen Gareis, and Tushar Jois</div>
@@ -414,7 +389,6 @@
         </div>
       </div>
       <div class="pub selected">
-        <img src="./images/battery_detection.png" alt="Diagram of the non-linear junction in a battery cell" class="thumb" />
         <div>
           <a class="pub-title" href="https://doi.org/10.1145/3643833.3656137">Detecting Battery Cells with Harmonic Radar</a>
           <div class="authors"><span class="me">Cesar Arguello</span>, Beatrice Perez, Timothy J. Pierson, and David Kotz</div>
@@ -427,7 +401,6 @@
         </div>
       </div>
       <div class="pub">
-        <img src="./images/inspectorProcess.png" alt="Inventory, wipe, and transfer steps for IoT devices when a home is sold" class="thumb" />
         <div>
           <a class="pub-title" href="https://doi.org/10.1109/MSEC.2024.3386467">We Need a “Building Inspector for IoT” When Smart Homes Are Sold</a>
           <div class="authors">Timothy J. Pierson, <span class="me">Cesar Arguello</span>, Beatrice Perez, Wondimu Zegeye, Kevin Kornegay, Carl A. Gunter, and David Kotz</div>
@@ -438,7 +411,6 @@
         </div>
       </div>
       <div class="pub selected">
-        <img src="./images/harmonic_distance.png" alt="Detection rate versus distance for several smart devices" class="thumb" />
         <div>
           <a class="pub-title" href="https://doi.org/10.1109/MILCOM58377.2023.10356371">Evaluating the Practical Range of Harmonic Radar to Detect Smart Electronics</a>
           <div class="authors">Beatrice Perez, <span class="me">Cesar Arguello</span>, Timothy J. Pierson, Gregory Mazzaro, and David Kotz</div>
@@ -449,7 +421,6 @@
         </div>
       </div>
       <div class="pub">
-        <img src="./images/disas.png" alt="EM trace spectrogram captured from a microcontroller" class="thumb" />
         <div>
           <a class="pub-title" href="https://arxiv.org/abs/2206.10746">A Practical Methodology for ML-based EM Side-Channel Disassemblers</a>
           <div class="authors"><span class="me">Cesar Arguello</span>, Hunter Searle, Sara Rampazzi, and Kevin Butler</div>
@@ -504,7 +475,7 @@
     </script>
 
     <footer>
-      © 2026 Cesar Arguello · Last updated November 2026
+      © 2026 Cesar Arguello
     </footer>
   </div>
 </body>
